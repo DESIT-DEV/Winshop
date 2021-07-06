@@ -19,21 +19,13 @@ html(lang="en")
                 thead
                     tr
                     th(scope='col') #
-                    th(scope='col') First
-                    th(scope='col') Last
-                    th(scope='col') Handle
+                    th(scope='col') Nombre
+                    th(scope='col') Descuento
+                    th(scope='col') Fecha
                 tbody
-                    tr
-                    th(scope='row') 1
-                    td Mark
-                    td Otto
-                    td @mdo
-                    tr
-                    th(scope='row') 2
-                    td Jacob
-                    td Thornton
-                    td @fat
-                    tr
-                    th(scope='row') 3
-                    td(colspan='2') Larry the Bird
-                    td @twitter
+                    each cupon in cupones
+                      tr
+                        th(scope='row') #{cupon.id}
+                        td #{cupon.nombre}
+                        td #{cupon.descuento}
+                        td #{cupon.vecnimiento}

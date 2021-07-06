@@ -9,13 +9,13 @@ html(lang="en")
     body 
 
         .container-fluid.p-4
-            form(action="", method="post")
+            form(action="/cupones/add", method="post")
                 label(for="") Nombre del cupón 
-                input(type="text").form-control.p-2
+                input(type="text" name="nombre").form-control.p-2
                 label(for="") Descuento
-                input(type="text").form-control.p-2
+                input(type="text" name="descuento").form-control.p-2
                 label(for="") Fecha de vencimiento
-                input(type="date").form-control.p-2
+                input(type="date" name="vecnimiento").form-control.p-2
                 br
-                btn.btn.btn-primary Enviar
+                button(type="submit").btn.btn-primary Enviar
                 a(href="/cupones/").btn.btn-light Volver
