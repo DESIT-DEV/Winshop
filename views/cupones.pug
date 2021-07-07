@@ -1,31 +1,35 @@
-doctype html
-html(lang="en")
-    head
-        meta(charset="UTF-8")
-        meta(http-equiv="X-UA-Compatible", content="IE=edge")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title Cupones publicados
-        link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css")
-    body 
-        
-       .container 
-        br
-        .row 
-        .col-12 
-            a(href="/cupones/add/").btn.btn-primary Agregar Cupón 
-        br
-        .row 
-            table.table
-                thead
-                    tr
-                    th(scope='col') #
-                    th(scope='col') Nombre
-                    th(scope='col') Descuento
-                    th(scope='col') Fecha
-                tbody
+extends complementos/header
+block content
+        .row
+          // Individual column searching (text inputs) Starts
+          .col-sm-12
+            .card
+              .card-header
+                h5 Tus cupones actuales 
+                br
+                a(href="/cupones/add/").btn.btn-primary Agregar cupón
+              .card-body
+                .table-responsive.product-table
+                  table#basic-1.display
+                    thead
+                      tr
+                        th Image
+                        th Details
+                        th Descuento
+                        th Stock
+                        th Start date
+                        th Action
+                    tbody
                     each cupon in cupones
                       tr
-                        th(scope='row') #{cupon.id}
-                        td #{cupon.nombre}
-                        td #{cupon.descuento}
-                        td #{cupon.vecnimiento}
+                        td
+                          img(src='/assets/images/ecommerce/product-table-1.png' alt='')
+                        td
+                          h6  #{cupon.nombre} 
+                          span Interchargebla lens Digital Camera with APS-C-X Trans CMOS Sens
+                        td $10
+                        td.font-success In Stock
+                        td 2011/04/25
+                        td
+                          button.btn.btn-danger.btn-xs(type='button' data-original-title='btn btn-danger btn-xs' title='') Delete
+                          button.btn.btn-success.btn-xs(type='button' data-original-title='btn btn-danger btn-xs' title='') Edit
